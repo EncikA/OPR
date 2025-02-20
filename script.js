@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = {
             programName: document.getElementById('programName').value.trim(),
             date: formatDate(document.getElementById('date').value), // Format the date
-            time: document.getElementById('time').value.trim(),
+            time: document.getElementById('time').value .trim(),
             location: document.getElementById('location').value.trim(),
             targetAudience: document.getElementById('targetAudience').value.trim(),
             objectives: document.getElementById('objectives').value.trim(),
@@ -52,20 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
         Promise.all(imagePreviews).then(images => {
             // Generate output HTML
             const outputHTML = `
-                <h2>Generated Report</h2>
-                <p><strong>Nama Program/Aktiviti:</strong> ${formData.programName}</p>
-                <p><strong>Tarikh:</strong> ${formData.date}</p>
-                <p><strong>Masa:</strong> ${formData.time}</p>
-                <p><strong>Tempat:</strong> ${formData.location}</p>
-                <p><strong>Sasaran:</strong> ${formData.targetAudience}</p>
-                <p><strong>Objektif:</strong> ${formData.objectives}</p>
-                <p><strong>Aktiviti:</strong> ${formData.activities}</p>
-                <p><strong>Kekuatan:</strong> ${formData.strengths}</p>
-                <p><strong>Kelemahan:</strong> ${formData.weaknesses}</p>
-                <p><strong>Gambar:</strong></p>
-                <div class="image-grid">${images.join('')}</div>
-                <p><strong>Disediakan oleh:</strong> ${formData.prepared By}</p>
-                <p><strong>Jawatan:</strong> ${formData.position}</p>
+                <div class="report-container">
+                    <h2>Generated Report</h2>
+                    <p><strong>Nama Program/Aktiviti:</strong> ${formData.programName}</p>
+                    <p><strong>Tarikh:</strong> ${formData.date}</p>
+                    <p><strong>Masa:</strong> ${formData.time}</p>
+                    <p><strong>Tempat:</strong> ${formData.location}</p>
+                    <p><strong>Sasaran:</strong> ${formData.targetAudience}</p>
+                    <p><strong>Objektif:</strong> ${formData.objectives}</p>
+                    <p><strong>Aktiviti:</strong> ${formData.activities}</p>
+                    <p><strong>Kekuatan:</strong> ${formData.strengths}</p>
+                    <p><strong>Kelemahan:</strong> ${formData.weaknesses}</p>
+                    <p><strong>Gambar:</strong></p>
+                    <div class="image-grid">${images.join('')}</div>
+                    <p><strong>Disediakan oleh:</strong> ${formData.preparedBy}</p>
+                    <p><strong>Jawatan:</strong> ${formData.position}</p>
+                </div>
             `;
 
             // Display the output
