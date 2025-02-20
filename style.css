@@ -1,97 +1,91 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated font */
     margin: 0;
     padding: 0;
+    background-color: #f0f4f8; /* Softer background color */
+    color: #333;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: #007BFF;
+    background-color: #0056b3; /* Darker blue for header */
     color: white;
+    border-bottom: 4px solid #003d80; /* Added border for emphasis */
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    max-width: 800px; /* Slightly wider for better layout */
+    margin: 20px auto;
     padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    border-radius: 8px; /* Rounded corners */
 }
 
 form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 label {
-    margin-top: 10px;
-    display: block;
+    font-weight: bold;
 }
 
-input[type="text"],
-input[type="time"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+input, textarea, button {
+    padding: 12px; /* Increased padding for better touch targets */
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
-    background-color: #28a745;
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 button:hover {
-    background-color: #218838;
-}
-
-#output {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 600px;
-}
-
-.report-container {
-    width: 100%;
-    max-width : 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.image-grid img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+    background-color: #0056b3; /* Darker on hover */
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #0056b3; /* Consistent footer color */
     color: white;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Image Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%; /* Fit within the grid cell */
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images are resized proportionally */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Ensure the output fits within A4 dimensions */
+#output {
+    max-width: 794px; /* A4 width */
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 14px; /* Smaller font size for compact layout */
+    line-height: 1.5;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
